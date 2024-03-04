@@ -22,6 +22,7 @@
 
 > [!NOTE]
 > This script is designed for Windows 11 only.
+> MAKE SURE YOU HAVE A JAVA JRE INSTALLED!! <a href="https://www.java.com/download/ie_manual.jsp">Download Link</a>
 
 1. Download the program from the releases page.
 2. Run the program as administrator.
