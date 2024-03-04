@@ -23,8 +23,6 @@
 > [!NOTE]
 > This script is designed for Windows 11 only.
 
-MAKE SURE YOU HAVE JAVA 21 SDK INSTALLED!! <a href="https://www.oracle.com/uk/java/technologies/downloads/#java21">Download Link</a>
-
 1. Download the program from the releases page.
 2. Run the program -Fortnite Settings Updater.exe- as administrator.
 3. Select the changes you want to make.
