@@ -15,15 +15,17 @@ import java.io.IOException;
 /**
  * The {@code FormPage} class creates a GUI application for updating Fortnite settings.
  * It allows users to adjust settings such as:
- *      Screen Resolution,
- *      NVIDIA Reflex Low Latency,
- *      mouse acceleration,
- *      Fullscreen Mode.
+ * Screen Resolution,
+ * NVIDIA Reflex Low Latency,
+ * mouse acceleration,
+ * Fullscreen Mode.
  * The settings are saved in an INI file.
  */
 public class FormPage extends JFrame {
 
-    static final String INI_FILE_NAME = "C:/Users/dylan/AppData/Local/FortniteGame/Saved/Config/WindowsClient/GameUserSettings.ini";
+    static final String INI_HOME_PATH = System.getProperty("user.home");
+    static final String INI_FILE_NAME = "\\AppData\\Local\\FortniteGame\\Saved\\Config\\WindowsClient\\GameUserSettings.ini";
+    static final String INI_PATH_NAME = INI_HOME_PATH + INI_FILE_NAME;
     static final String INI_SECTION_NAME = "/Script/FortniteGame.FortGameUserSettings";
     static final String INI_XRES_KEY_NAME = "ResolutionSizeX";
     static final String INI_YRES_KEY_NAME = "ResolutionSizeY";
@@ -219,7 +221,7 @@ public class FormPage extends JFrame {
         applyButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                File iniFile = new File(INI_FILE_NAME);
+                File iniFile = new File(INI_PATH_NAME);
 
                 try {
                     int xResolution = Integer.parseInt(xResolutionWanted.getText());
@@ -268,6 +270,7 @@ public class FormPage extends JFrame {
                         ini.put(INI_SECTION_NAME, "LatencyTweak2", "2");
                     } else {
                         JOptionPane.showMessageDialog(frame, "No NVIDIA Reflex Low Latency option is selected", "Input Error", JOptionPane.ERROR_MESSAGE);
+                        return;
                     }
 
                     if (mouseAccelerationOff.isSelected()) {
@@ -276,6 +279,7 @@ public class FormPage extends JFrame {
                         ini.put(INI_SECTION_NAME, "bDisableMouseAcceleration", "False");
                     } else {
                         JOptionPane.showMessageDialog(frame, "No Mouse Acceleration option is selected", "Input Error", JOptionPane.ERROR_MESSAGE);
+                        return;
                     }
 
                     if (screenModeFullscreen.isSelected()) {
@@ -292,6 +296,7 @@ public class FormPage extends JFrame {
                         ini.put(INI_SECTION_NAME, "PreferredFullscreenMode", "2");
                     } else {
                         JOptionPane.showMessageDialog(frame, "No Fullscreen Mode option is selected", "Input Error", JOptionPane.ERROR_MESSAGE);
+                        return;
                     }
 
                     ini.store();
@@ -317,7 +322,7 @@ public class FormPage extends JFrame {
      * @throws IOException If an error occurs while reading the INI file.
      */
     private String getResolutionSettings(String axis) throws IOException {
-        File iniFile = new File(INI_FILE_NAME);
+        File iniFile = new File(INI_PATH_NAME);
         if (iniFile.exists()) {
 
             Ini ini = new Ini(iniFile);
@@ -339,7 +344,7 @@ public class FormPage extends JFrame {
      * @throws IOException IOException If an error occurs while reading the INI file.
      */
     private String getNvidiaLowLatencySetting() throws IOException {
-        File iniFile = new File(INI_FILE_NAME);
+        File iniFile = new File(INI_PATH_NAME);
 
         if (iniFile.exists()) {
 
@@ -356,7 +361,7 @@ public class FormPage extends JFrame {
      * @throws IOException If an error occurs while reading the INI file.
      */
     private String getMouseAccelerationSetting() throws IOException {
-        File iniFile = new File(INI_FILE_NAME);
+        File iniFile = new File(INI_PATH_NAME);
 
         if (iniFile.exists()) {
 
@@ -373,7 +378,7 @@ public class FormPage extends JFrame {
      * @throws IOException If an error occurs while reading the INI file.
      */
     private String getScreenMode() throws IOException {
-        File iniFile = new File(INI_FILE_NAME);
+        File iniFile = new File(INI_PATH_NAME);
 
         if (iniFile.exists()) {
 
