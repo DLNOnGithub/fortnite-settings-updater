@@ -26,7 +26,7 @@
 MAKE SURE YOU HAVE A JAVA JRE INSTALLED!! <a href="https://www.java.com/download/ie_manual.jsp">Download Link</a>
 
 1. Download the program from the releases page.
-2. Run the program as administrator.
+2. Run the program -Fortnite Settings Updater.exe- as administrator.
 3. Select the changes you want to make.
 4. Click apply.
 
