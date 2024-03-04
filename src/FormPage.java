@@ -23,7 +23,7 @@ import java.io.IOException;
  */
 public class FormPage extends JFrame {
 
-    static final String INI_FILE_NAME = "testFile.ini";
+    static final String INI_FILE_NAME = "C:/Users/dylan/AppData/Local/FortniteGame/Saved/Config/WindowsClient/GameUserSettings.ini";
     static final String INI_SECTION_NAME = "/Script/FortniteGame.FortGameUserSettings";
     static final String INI_XRES_KEY_NAME = "ResolutionSizeX";
     static final String INI_YRES_KEY_NAME = "ResolutionSizeY";
