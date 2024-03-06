@@ -20,7 +20,7 @@
 
 ## 📸 Screenshots of Program
 
-![Main Screen]()
+![Main Screen](screenshots/Main_Page_Img)
 
 ## 🔧 Usage
 
